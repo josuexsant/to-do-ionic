@@ -6,6 +6,7 @@ export interface Message {
   date: string;
   id: number;
   read: boolean;
+  content: string; // Added content field for message body
 }
 
 @Injectable({
@@ -18,7 +19,8 @@ export class DataService {
       subject: 'Proximamente habra contenido aqui modificable ggg',
       date: '9:32 AM',
       id: 0,
-      read: false
+      read: false,
+      content: 'Tareita que debe ser tareada para tarear.'
     },
   ];
 
