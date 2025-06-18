@@ -25,5 +25,9 @@
       {{ message.content  | slice:0:500 }}
       </p>
     </div>
+    <ion-button expand="block" color="secondary" [routerLink]="['/edit-message', message.id]">
+      <ion-icon slot="start" name="create-outline"></ion-icon>
+      Edit
+    </ion-button>
   </ion-content>
 }
