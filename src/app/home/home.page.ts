@@ -29,4 +29,5 @@ export class HomePage {
   createTask() {
     this.router.navigate(['/create']);
   }
+  
 }

@@ -1,5 +1,30 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+        [text]="getBackButtonText()"
+        defaultHref="/"
+      ></ion-back-button>
+    </ion-buttons>
     <ion-title> Tareas </ion-title>
   </ion-toolbar>
 </ion-header>
+
+<ion-content>
+  <form (ngSubmit)="createMessage(titulo.value?.toString() || null, descripcion.value?.toString() || null)">
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">Título</ion-label>
+        <ion-input type="text" name="titulo" #titulo></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Descripción</ion-label>
+        <ion-textarea name="descripcion" #descripcion></ion-textarea>
+      </ion-item>
+    </ion-list>
+    <ion-button
+      expand="block"
+      type="submit"
+    >Crear Tarea</ion-button>
+  </form>
+</ion-content>
