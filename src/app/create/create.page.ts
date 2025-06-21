@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-create',
   templateUrl: './create.page.html',
   styleUrls: ['./create.page.scss'],
+  standalone: false
 })
 export class CreatePage implements OnInit {
 

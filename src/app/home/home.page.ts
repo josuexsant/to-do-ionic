@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { RefresherCustomEvent } from '@ionic/angular';
 import { MessageComponent } from '../message/message.component';
+import { Router } from '@angular/router';
 
 import { DataService, Message } from '../services/data.service';
 
@@ -12,6 +13,7 @@ import { DataService, Message } from '../services/data.service';
 })
 export class HomePage {
   private data = inject(DataService);
+  private router = inject(Router);
   constructor() {}
 
   refresh(ev: any) {
@@ -22,5 +24,9 @@ export class HomePage {
 
   getMessages(): Message[] {
     return this.data.getMessages();
+  }
+
+  createTask() {
+    this.router.navigate(['/create']);
   }
 }
